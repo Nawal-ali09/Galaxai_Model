@@ -8,7 +8,7 @@ export const Experience = () => {
 
   return (
     <>
-      <Avatar position={[0, -3, 5]} scale={2} />
+      <Avatar position={[0, -3.35, 6.8]} scale={2} />
       <Environment preset="sunset" />
       <mesh>
         <planeGeometry args={[viewport.width, viewport.height]} />
