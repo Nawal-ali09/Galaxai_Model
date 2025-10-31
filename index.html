@@ -10,23 +10,27 @@
       body {
         margin: 0;
         position: relative;
+        font-family: 'Arial', sans-serif; /* or any font you like */
       }
 
-      /* Logo styling */
-      #logo {
+      /* Text Logo styling */
+      #text-logo {
         position: absolute;
-        top: 20px;      /* distance from top */
-        left: 20px;    /* distance from right */
-        width: 200px;    /* adjust size as needed */
-        height: auto;
+        top: 20px;
+        left: 20px; /* adjust position */
+        font-size: 36px;  /* adjust size */
+        font-weight: bold;
+        color: #fff;       /* white text, change as needed */
+        text-transform: uppercase;
+        letter-spacing: 2px; /* spacing between letters */
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
 
-    <!-- Logo at top-right -->
-    <img id="logo" src="/public/textures/galax_logo.jpg" alt="Logo" />
+    <!-- Text logo -->
+    <div id="text-logo">Galaxai</div>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
