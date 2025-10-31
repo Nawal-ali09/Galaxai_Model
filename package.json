@@ -1,0 +1,32 @@
+{
+  "name": "r3f-vite-starter",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@react-three/drei": "9.75.0",
+    "@react-three/fiber": "8.13.3",
+    "@types/three": "0.152.1",
+    "leva": "^0.9.35",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "read-pkg-up": "^10.1.0",
+    "three": "0.153.0"
+  },
+  "devDependencies": {
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10",
+    "@vitejs/plugin-react": "^3.1.0",
+    "vite": "^4.1.0"
+  },
+  "description": "![Thumbnail](https://github.com/wass08/r3f-lipsync-tutorial/assets/6551176/b53625c5-88d0-4a84-ae4b-3da63d40b240)",
+  "main": "vite.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

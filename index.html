@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite + React</title>
+    <style>
+      /* Make sure the body fills the viewport */
+      body {
+        margin: 0;
+        position: relative;
+      }
+
+      /* Logo styling */
+      #logo {
+        position: absolute;
+        top: 20px;      /* distance from top */
+        left: 20px;    /* distance from right */
+        width: 200px;    /* adjust size as needed */
+        height: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+
+    <!-- Logo at top-right -->
+    <img id="logo" src="/public/textures/galax_logo.jpg" alt="Logo" />
+
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
