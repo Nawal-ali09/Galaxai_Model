@@ -31,6 +31,7 @@ export function Avatar(props) {
     morphTargetSmoothing,
   } = useControls({
     playAudio: false,
+    headFollow: true,
     script: {
       value: "HelloGalax",
       options: ["HelloGalax", "AboutGalax"],
