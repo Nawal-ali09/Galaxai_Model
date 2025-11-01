@@ -2,7 +2,7 @@ import { useAnimations, useFBX, useGLTF } from "@react-three/drei";
 import { useFrame, useLoader } from "@react-three/fiber";
 import { useControls } from "leva";
 import React, { useEffect, useMemo, useRef, useState } from "react";
-import { BufferGeometryUtils } from "three/examples/jsm/utils/BufferGeometryUtils.js";
+
 
 import * as THREE from "three";
 
@@ -198,33 +198,23 @@ export function Avatar(props) {
     });
   });
 
-  const parts = [
-  nodes.Wolf3D_Body,
-  nodes.Wolf3D_Outfit_Bottom,
-  nodes.Wolf3D_Outfit_Footwear,
-  nodes.Wolf3D_Outfit_Top,
-  nodes.Wolf3D_Hair,
-  nodes.Wolf3D_Head,
-  nodes.Wolf3D_Teeth,
-  nodes.EyeLeft,
-  nodes.EyeRight,
-];
-
-return (
-  <group {...props} dispose={null} ref={group}>
-    <primitive object={nodes.Hips} />
-
-    {parts.map((part, i) => {
-      // Merge vertices to avoid duplicates
-      const mergedGeometry = BufferGeometryUtils.mergeVertices(part.geometry);
-      
-      // Optionally clone multiple times to increase particle count
-      const geometry = mergedGeometry.clone();
-
-      return (
+  return (
+    <group {...props} dispose={null} ref={group}>
+      <primitive object={nodes.Hips} />
+      {[
+        nodes.Wolf3D_Body,
+        nodes.Wolf3D_Outfit_Bottom,
+        nodes.Wolf3D_Outfit_Footwear,
+        nodes.Wolf3D_Outfit_Top,
+        nodes.Wolf3D_Hair,
+        nodes.Wolf3D_Head,
+        nodes.Wolf3D_Teeth,
+        nodes.EyeLeft,
+        nodes.EyeRight,
+      ].map((part, i) => (
         <points
           key={i}
-          geometry={geometry}
+          geometry={part.geometry}
           skeleton={part.skeleton}
           morphTargetDictionary={part.morphTargetDictionary}
           morphTargetInfluences={part.morphTargetInfluences}
@@ -237,10 +227,9 @@ return (
             depthWrite={false}
           />
         </points>
-      );
-    })}
-  </group>
-);
+      ))}
+    </group>
+  );
 }
 
 useGLTF.preload("/models/646d9dcdc8a5f5bddbfac913.glb");
