@@ -10,27 +10,64 @@
       body {
         margin: 0;
         position: relative;
-        font-family: 'Arial', sans-serif; /* or any font you like */
+        font-family: 'Arial', sans-serif;
+        overflow: hidden; /* prevent scrollbars */
+      }
+
+      /* Fullscreen video background */
+      #bg-video {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover; /* fill screen, keep aspect ratio */
+        z-index: -1; /* behind everything */
       }
 
       /* Text Logo styling */
       #text-logo {
         position: absolute;
-        top: 20px;
-        left: 20px; /* adjust position */
-        font-size: 36px;  /* adjust size */
+        top: 10px;
+        left: 20px;
+        font-size: 36px;
         font-weight: bold;
-        color: #fff;       /* white text, change as needed */
+        color: #fff;
         text-transform: uppercase;
-        letter-spacing: 2px; /* spacing between letters */
+        letter-spacing: 2px;
+        z-index: 10; /* above video */
+      }
+
+      /* Centered input box */
+      #user-input {
+        position: absolute;
+        top: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10; /* above video */
+        font-size: 20px;
+        padding: 10px 15px;
+        border-radius: 8px;
+        border: 2px solid #fff;
+        outline: none;
       }
     </style>
   </head>
   <body>
-    <div id="root"></div>
+    <!-- Video background -->
+    <video id="bg-video" autoplay muted loop playsinline>
+      <source src="/textures/background.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
     <!-- Text logo -->
     <div id="text-logo">Galaxai</div>
+
+    <!-- Centered input box -->
+    <input type="text" id="user-input" placeholder="Type here..." />
+
+    <!-- React root -->
+    <div id="root"></div>
 
     <script type="module" src="/src/main.jsx"></script>
   </body>
